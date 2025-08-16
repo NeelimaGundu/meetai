@@ -1,6 +1,6 @@
 "use client";
 
-import { DashboardUserButton } from "../dashboard-user";
+import { DashboardUserButton } from "./dashboard-user";
 
 import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
 import Image from "next/image";
