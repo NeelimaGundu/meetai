@@ -1,6 +1,6 @@
 import { authClient } from "@/lib/auth-client";
 
-import { ChevronDownIcon, CreditCardIcon, LogOutIcon } from "lucide-react";
+import { ChevronDownIcon, CreditCardIcon, LoaderIcon, LogOutIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { GeneratedAvatar } from "@/components/generated-avatar";
 
@@ -24,6 +24,7 @@ import {
     DrawerTitle,
     DrawerDescription
 } from "@/components/ui/drawer";
+import { FaTruckLoading } from "react-icons/fa";
 
 export const DashboardUserButton = () => {
     const router = useRouter();
@@ -41,7 +42,9 @@ export const DashboardUserButton = () => {
     }
 
     if (isPending || !data?.user) {
-        return null;
+        return (
+            <LoaderIcon className="animate-spin" />
+        );
     }
 
     if (isMobile) {
